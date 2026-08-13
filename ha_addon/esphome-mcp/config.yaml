@@ -1,6 +1,6 @@
 name: "ESPHome MCP"
 description: "MCP server for the ESPHome 2026.6+ Device Builder dashboard"
-version: "2026.06.0-run2"
+version: "ha-addon-support"
 slug: "esphome-mcp"
 url: "https://github.com/loryanstrant/esphome-mcp"
 # PERSONAL RUN BRANCH: narrowed to match the single-platform manual build above.
