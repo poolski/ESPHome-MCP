@@ -3,17 +3,19 @@ description: "MCP server for the ESPHome 2026.6+ Device Builder dashboard"
 version: "2026.06.0"
 slug: "esphome-mcp"
 url: "https://github.com/loryanstrant/esphome-mcp"
+# PERSONAL RUN BRANCH: narrowed to match the single-platform manual build above.
 arch:
   - amd64
-  - aarch64
 startup: services
 boot: auto
 # Read-only Supervisor self-info lookup, used for the status page's port and to
 # reset regenerate_secret_path back to false after honoring it. Both are
 # /addons/self/* endpoints.
 hassio_api: true
-# Reuses the same multi-arch image CI already publishes on release.
-image: "ghcr.io/loryanstrant/esphome-mcp"
+# PERSONAL RUN BRANCH: points at a manually-pushed build of this branch's code
+# (not on ha-addon-support -- that stays pointed at the real registry image for
+# the PR). Switch back once a tagged release publishes the real image.
+image: "ghcr.io/poolski/esphome-mcp"
 # The status/instructions page (dashboard connectivity + MCP connect URL).
 # The MCP endpoint itself is NOT served over ingress -- ingress requires an
 # authenticated HA session, which MCP clients can't do. See ports below.
